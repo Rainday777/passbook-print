@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/passbook"></base>
+    <title>Hello WebSocket</title>
+    <link href="/passbook/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/passbook/main.css" rel="stylesheet">
+   
+    <script src="/passbook/webjars/jquery/jquery.min.js"></script>
+    <script src="/passbook/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/passbook/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/passbook/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn  btn-primary" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-danger" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="printerName">Set printer :</label>
+                    <input type="text" id="printerName" class="form-control" placeholder="input name here...">
+                </div>
+                <button id="sendPrinter" class="btn btn-success" type="submit">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+
+        <div class="col-md-12">
+        	
+            <table id="conversation" class="table table-striped">
+            	<caption></caption>
+                <thead>
+                
+                <tr>
+                    <th id="tableHeader">Printer Name</th>
+                    
+                    <td>
+                    	<button id="findPrinter" class="btn btn-success" type="submit">Find</button>
+                    	<button id="testPrint" class="btn btn-success" type="submit">Test Print</button>
+                    </td>
+                  
+                </tr>
+                </thead>
+                <tbody id="printer">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
