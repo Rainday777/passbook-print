@@ -10,7 +10,7 @@ import kbtg.kbond.passbookprint.config.WebSocketProperties;
 @SpringBootApplication
 @EnableConfigurationProperties(WebSocketProperties.class)
 public class PassbookPrintApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(PassbookPrintApplication.class, args);
 	}

@@ -1,0 +1,12 @@
+16:58:06 Error End Trans RC = 1284
+16:58:06 Error End Trans RC = 1284Error Close Device RC = 1284
+17:01:10 Error End Trans RC = 1284
+17:01:10 Error End Trans RC = 1284Error Close Device RC = 1284
+17:05:52 Error End Trans RC = 1284
+17:05:52 Error End Trans RC = 1284Error Close Device RC = 1284
+17:14:04 Error End Trans RC = 1284
+17:14:04 Error End Trans RC = 1284Error Close Device RC = 1284
+17:35:24 Error End Trans RC = 1284
+17:35:24 Error End Trans RC = 1284Error Close Device RC = 1284
+17:37:55 Error End Trans RC = 1284
+17:37:55 Error End Trans RC = 1284Error Close Device RC = 1284

@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 import kbtg.kbond.passbookprint.model.PassbookData;
 import kbtg.kbond.passbookprint.model.print.PassBook;
 import kbtg.kbond.passbookprint.model.print.PrintPassBook;
+import kbtg.kbond.passbookprint.serialport.PrintPassBookManager;
+import kbtg.kbond.passbookprint.serialport.PrinterSerialPortException;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,7 +30,7 @@ import lombok.NoArgsConstructor;
 public class PassbookPrinterService {
 
 	private static final Logger log = LoggerFactory.getLogger(PassbookPrinterService.class);
-	@Autowired
+	@Autowired(required = false)
 	private PrintService printer;
 
 	@Bean
@@ -80,6 +82,18 @@ public class PassbookPrinterService {
 		} catch (PrinterException e) {
 			log.error("Passbook printing Error passbook = {} , printer = {}",passbook,printer,e);
 			throw new PrinterException();
+		}
+		return new PassbookData();
+	}
+
+	public PassbookData printComPort(PassBook passbook)  {
+		
+		PrintPassBookManager manger = new PrintPassBookManager(passbook);
+		try {
+			manger.print();
+		} catch (PrinterSerialPortException e) {
+			log.error("Passbook printing Error passbook = {} ",passbook,e);
+			throw new PrinterSerialPortException();
 		}
 		return new PassbookData();
 	}

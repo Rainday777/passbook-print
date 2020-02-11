@@ -71,35 +71,6 @@ function testPrint() {
     		));
 }
 
-function testPrintSerial() {
-	var lines = new Array();
-	for (var i = 0; i < 24; i++) {
-
-        lines[i] = "Line Line Line Line Line Line Line Line Line " + i;
-
-    }
-    stompClient.send("/app/printserial", {}, 
-    		JSON.stringify(
-    		{'copies': 1,
-    		 'header1':'',
-    		 'header2':'',
-    		 'branch':'แจ้งวัฒนะ' ,
-    		 'accountNo':'1234-4567-90',
-    		 'holderName':'นายรักประเทศไทย รักชาตื',
-    		 'holderAddress1':'123/456 ข 789',
-    		 'holderAddress2':'thailand',
-    		 'holderAddress3':'Bangkok',
-    		 'printCoverPage':'false',
-    		 'lines':lines,
-    		 'paperSize':{
-    			 'width':'5.0in', 
-    			 'height':'7.0in',
-    			 'autoResize':'true'
-    		 	}
-    		}
-    		));
-}
-
 function findPrinter() {
     stompClient.send("/app/find", {},{});
 }
@@ -118,9 +89,8 @@ $(function () {
     });
     $( "#connect" ).click(function() { connect(); });
     $( "#disconnect" ).click(function() { disconnect(); });
-   
+    $( "#send" ).click(function() { sendName(); });
     $( "#sendPrinter" ).click(function() { sendPrinter(); });
     $( "#findPrinter" ).click(function() { findPrinter(); });
     $( "#testPrint" ).click(function() { testPrint(); });
-    $( "#testPrintSerial" ).click(function() { testPrintSerial(); });
 });

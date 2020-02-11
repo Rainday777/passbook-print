@@ -40,6 +40,13 @@ public class PrinterController {
 	@SendTo("/topic/print/success")
 	public PassbookData printPassbook(PassBook passbook) throws PrinterException  {
 		return printer.print(passbook);
+		//return printer.printComPort(passbook);
+	}
+	
+	@MessageMapping("/printserial")
+	@SendTo("/topic/print/success")
+	public PassbookData printPassbookSerial(PassBook passbook) {
+		return printer.printComPort(passbook);
 	}
 	
 	@MessageMapping("/find")
