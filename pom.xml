@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>kbtg.kbond</groupId>
 	<artifactId>passbook-print</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>passbook-print</name>
 	<description>Project to support K-BOND system to print passbook</description>
 

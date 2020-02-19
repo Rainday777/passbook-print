@@ -25,7 +25,7 @@ public class PrintPassBookManager {
 			setDefaultPassbookInitial(printer);
 		}
 		printer.passbookLineFeed();
-		printer.print("Hello");
+		printer.print(this.passbook.getLines());
 		printer.formFeed();	// eject paper
 
 		if (printInit) {
